@@ -1,12 +1,12 @@
 import datetime
-
+import os
 import discord
 import asyncio
 import openpyxl
 
 
 client = discord.Client()
-token = "OTc1OTM2NzYxNDcxNTk0NTU2.GYMGJa.drGuClLMCu9aWdHStZ_16WEsOsBhpcXRGrgoMQ"
+token = "access_token"
 
 yes = "⭕"
 no = "❌"
@@ -77,5 +77,5 @@ async def on_member_remove(member):
     fmt = '{0.mention} 님이 서버에서 나가셨습니다.'
     await client.send_message(channel, fmt.format(member, member.server))
 
-
+access_token=os.environ["BOT_TOKEN"]
 client.run(token)
